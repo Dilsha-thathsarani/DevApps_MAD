@@ -1,4 +1,4 @@
-package com.example.bookmark.cart_management;
+package com.example.bookmark.cart_management.ViewHolder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.bookmark.R;
 
-public class CartActivity extends AppCompatActivity {
+public class Cart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
