@@ -12,6 +12,9 @@ public class Card {
     private String cv;
     private String expdate;
 
+
+
+
     public String getNumber() {
         return number;
     }

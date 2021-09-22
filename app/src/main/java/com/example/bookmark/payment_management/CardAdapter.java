@@ -100,9 +100,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                         map.put("cv",cv.getText().toString());
                         map.put("uid",uid);
 
-
+                        //String key = String.valueOf(number);
+                        String key = number.getText().toString();
                         FirebaseDatabase.getInstance().getReference().child("CardData")
-                                .child("-MkBrXjygmM7xXlGxkcY").updateChildren(map)
+                                .child(key).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
@@ -134,10 +135,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                 builder.setMessage("This card will be deleted");
 
                 builder.setPositiveButton("Delete",new DialogInterface.OnClickListener(){
+
+                    String key = String.valueOf(cards.getNumber());
                     @Override
                     public void onClick(DialogInterface dialog, int which){
                         FirebaseDatabase.getInstance().getReference().child("CardData")
-                                .child("-MkBrXjygmM7xXlGxkcY").removeValue();
+                                .child(key).removeValue();
                     }
                 });
 

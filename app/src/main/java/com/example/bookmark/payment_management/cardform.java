@@ -67,7 +67,8 @@ public class cardform extends AppCompatActivity {
                 card.setCv(cv);
                 card.setExpdate(expdate);
 
-                reff.push().setValue(card);
+
+                reff.child(number).setValue(card);
                 Toast.makeText(cardform.this, "Data added!", Toast.LENGTH_LONG).show();
             }
             verifyPin();
