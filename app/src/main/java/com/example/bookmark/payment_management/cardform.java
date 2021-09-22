@@ -40,21 +40,31 @@ public class cardform extends AppCompatActivity {
 
 
 
+
         card = new Card();
         reff = FirebaseDatabase.getInstance().getReference().child("CardData");
 
         btnsave.setOnClickListener(v -> {
             if(chk.isChecked()) {
-                String name = String.valueOf(txtCusName.getText());
-                int num = Integer.parseInt(txtCrdNo.getText().toString().trim());
-                String exp = String.valueOf(txtExp.getText());
-                int cv = Integer.parseInt(txtCvv.getText().toString().trim());
+                //String name = String.valueOf(txtCusName.getText());
+               // String num = String.valueOf(txtCrdNo.getText().toString().trim());
+                //String exp = String.valueOf(txtExp.getText());
+               // int Cv = Integer.parseInt(txtCvv.getText().toString().trim());
+                String cardname = String.valueOf(txtCusName.getText());
+                String number = String.valueOf(txtCrdNo.getText().toString().trim());
+                String expdate = String.valueOf(txtExp.getText());
+                String cv = String.valueOf(txtCvv.getText().toString().trim());
 
-                card.setCusname(name);
-                card.setCrdNo(num);
-                card.setExp(exp);
-                card.setCvv(cv);
+
+                //card.setCusname(name);
+                //card.setCrdNo(num);
+                //card.setExp(exp);
+                //card.setCvv(Cv);
                 card.setUid(txtUid);
+                card.setCardname(cardname);
+                card.setNumber(number);
+                card.setCv(cv);
+                card.setExpdate(expdate);
 
                 reff.push().setValue(card);
                 Toast.makeText(cardform.this, "Data added!", Toast.LENGTH_LONG).show();
