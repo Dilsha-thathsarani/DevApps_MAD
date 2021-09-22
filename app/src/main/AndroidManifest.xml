@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
 
-        <activity android:name=".payment_management.cardform" />
+        <activity android:name=".payment_management.Addedcards" />
         <activity android:name=".payment_management.SavedMethods" />
         <activity android:name=".product_review.ReviewActivity" />
         <activity android:name=".cart_management.CartActivity" />
@@ -30,7 +30,7 @@
         -->
         <activity android:name=".payment_management.PaymentActivity" />
         <activity android:name=".payment_management.activity_h2p" />
-        <activity android:name=".payment_management.Addedcards">
+        <activity android:name=".payment_management.cardform">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

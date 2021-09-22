@@ -6,6 +6,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -69,13 +70,14 @@ public class cardform extends AppCompatActivity {
                 reff.push().setValue(card);
                 Toast.makeText(cardform.this, "Data added!", Toast.LENGTH_LONG).show();
             }
+            verifyPin();
         });
 
 
         /*********************************************************/
-
-       // button = (Button) findViewById(R.id.btnSubmit);
 /*
+        button = (Button) findViewById(R.id.btnSubmit);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +85,7 @@ public class cardform extends AppCompatActivity {
             }
         });
 
- */
+*/
         /*
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +104,7 @@ public class cardform extends AppCompatActivity {
     }
 
     public void verifyPin(){
-        //Intent intent = new Intent(this, activity_ver2.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, Addedcards.class);
+        startActivity(intent);
     }
 }
