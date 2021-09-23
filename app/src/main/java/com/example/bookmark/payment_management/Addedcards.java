@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.bookmark.R;
@@ -49,6 +50,11 @@ public class Addedcards extends AppCompatActivity {
 
                 }
                 cardAdapter.notifyDataSetChanged();
+                if(CardAdapter.getflag()){
+                    CardAdapter.setflag();
+                    Intent intent = new Intent(Addedcards.this, Addedcards.class);
+                    startActivity(intent);
+                }
             }
 
             @Override

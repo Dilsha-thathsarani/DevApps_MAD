@@ -3,88 +3,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6F1F7"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/purple_500"
+        android:layout_height="70dp"
+        android:background="#3C498A"
         android:gravity="center"
         android:text="Update Card Details"
         android:textColor="#FDFDFD"
-        android:textSize="30dp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Card Name"/>
+        android:gravity="center"
+        android:text="Card Holder's Name"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtcrdnme"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
-        android:gravity="center"/>
+
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Card Number"/>
+        android:gravity="center"
+        android:text="Card Number"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtcrdnum"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
-        android:gravity="center"/>
+        android:editable="false"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Expire Date"/>
+        android:gravity="center"
+        android:text="Expire Date"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtcrdexp"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="CVV"/>
+        android:gravity="center"
+        android:text="CVV"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtcrdcv"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight= "10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/rounded"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <Button
         android:id="@+id/editcrd"
@@ -93,14 +97,14 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/rounded"
-        android:backgroundTint="@color/purple_500"
+
+
+        android:backgroundTint="#3C498A"
         android:gravity="center"
-        android:text="Update"
+        android:text="Save"
         android:textAllCaps="false"
-        android:textColor="#101010"
-        android:textSize="21dp"
-        app:backgroundTint="#CF2929" />
+        android:textColor="#FFFFFF"
+        android:textSize="21dp" />
 
 
 </LinearLayout>

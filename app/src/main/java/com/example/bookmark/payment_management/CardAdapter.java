@@ -3,6 +3,7 @@ package com.example.bookmark.payment_management;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
     String uid = "user001";
 
+    static boolean flag = false;
+
 
     public CardAdapter(Context context, ArrayList<Cards> list) {
         this.context = context;
@@ -48,6 +51,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
     @NotNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+
         View v = LayoutInflater.from(context).inflate(R.layout.item,parent,false);
         return new CardViewHolder(v);
     }
@@ -70,7 +74,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             public void onClick(View v) {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.cardname.getContext())
                         .setContentHolder(new ViewHolder(R.layout.update_popup))
-                        .setExpanded(true, 1200)
+                        .setExpanded(true, 1400)
                         .create();
                 //dialogPlus.show();
 
@@ -100,6 +104,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                         map.put("cv",cv.getText().toString());
                         map.put("uid",uid);
 
+                        flag = true;
+
                         //String key = String.valueOf(number);
                         String key = number.getText().toString();
                         FirebaseDatabase.getInstance().getReference().child("CardData")
@@ -109,6 +115,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                                     public void onSuccess(Void unused) {
                                         Toast.makeText(holder.cardname.getContext(), "Updated Successfully", Toast.LENGTH_SHORT).show();
                                         dialogPlus.dismiss();
+                                        flag = true;
+
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -141,6 +149,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                     public void onClick(DialogInterface dialog, int which){
                         FirebaseDatabase.getInstance().getReference().child("CardData")
                                 .child(key).removeValue();
+                        Toast.makeText(holder.cardname.getContext(), "Card Removed", Toast.LENGTH_SHORT).show();
+                        flag = true;
                     }
                 });
 
@@ -182,4 +192,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
         }
     }
+
+    public static boolean getflag(){
+        return flag;
+    }
+
+    public static void setflag(){
+        flag=false;
+    }
+
 }
