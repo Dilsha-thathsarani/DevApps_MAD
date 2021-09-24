@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
+        <activity android:name=".cart_management.ViewHolder.OrderStatus"></activity>
         <activity android:name=".cart_management.ViewHolder.Cart">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +23,7 @@
         <activity android:name=".order_management.OrderActivity" />
         <activity android:name=".listing_management.ListingActivity" />
         <activity android:name=".category_management.CategoryActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
