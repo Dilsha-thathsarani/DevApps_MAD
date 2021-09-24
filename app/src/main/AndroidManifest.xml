@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
-
+        <activity android:name=".payment_management.activity_payStatus2"></activity>
+        <activity android:name=".payment_management.Addedcards2" />
+        <activity android:name=".payment_management.activity_payStatus" />
+        <activity android:name=".payment_management.bottomNavigation" />
         <activity android:name=".payment_management.Addedcards" />
         <activity android:name=".payment_management.SavedMethods" />
         <activity android:name=".product_review.ReviewActivity" />
@@ -29,8 +32,8 @@
         <activity android:name=".category_management.Category" />
         -->
         <activity android:name=".payment_management.PaymentActivity" />
-        <activity android:name=".payment_management.activity_h2p" />
-        <activity android:name=".payment_management.cardform">
+        <activity android:name=".payment_management.cardform" />
+        <activity android:name=".payment_management.activity_h2p">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

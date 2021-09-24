@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">bookMark</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_cancle">Cancel</string>
+    <string name="btn_savedf">Try with another method</string>
+    <string name="btn_newc">Use a new card</string>
+    <string name="btn_savedc">Use a saved card</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_rename">Rename</string>
+    <string name="btn_use">Use</string>
+    <string name="tit_payopt">Payment Options</string>
+    <string name="tit_adddetail">Add Payment Details</string>
+    <string name="tit_paystatus">Card Denied!</string>
+    <string name="tit_paystatus2">Card Accepted</string>
+    <string name="lbl_qmethod">How do you like to continue with the payment?</string>
+    <string name="lbl_hname">Card Holder\'s Name</string>
+    <string name="lbl_crdNo">Card No</string>
+    <string name="lbl_Exp">Exp. date</string>
+    <string name="lbl_cvv">CVV</string>
+    <string name="chck_save">Save this card</string>
+    <string name="lbl_sotp">Submit your one-time password</string>
+    <string name="lbl_otp">OTP</string>
+    <string name="lbl_resend">Resend</string>
+    <string name="lbl_pays">Payment Failed!</string>
+    <string name="btn_saved">Manage My cards</string>
 </resources>

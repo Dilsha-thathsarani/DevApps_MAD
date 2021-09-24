@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/activity_bottom_navigation" />
+
     <View
         android:id="@+id/view5"
         android:layout_width="0dp"
@@ -16,25 +20,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="-31dp"
+        tools:layout_editor_absoluteY="45dp">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/lblTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="28dp"
-            android:text="Payment options"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/tit_paystatus"
             android:textColor="#FFFFFF"
-
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Add Payment Details" />
+            tools:text="Payment  Status" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -47,7 +53,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_rew" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
     <View
         android:id="@+id/view6"
@@ -55,64 +61,60 @@
         android:layout_height="550dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="88dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:background="#E6F1F7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="How do you like to continue with the paymnet?"
+        android:text="@string/tit_paystatus2"
         android:textColor="#000000"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view6" />
 
     <Button
-        android:id="@+id/newbtn"
+        android:id="@+id/btnCancel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Use a new card"
+        android:layout_marginTop="16dp"
+        android:text="@string/btn_cancle"
         app:backgroundTint="#73B8DD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPmethods" />
 
     <Button
-        android:id="@+id/savedbtn"
+        android:id="@+id/btnPmethods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Use a saved card"
+        android:layout_marginTop="30dp"
+        android:text="@string/btn_saved"
         app:backgroundTint="#3C498A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <Button
-        android:id="@+id/btnManage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Manage Cards"
-        android:textColor="#000000"
-        app:backgroundTint="#FFFFFF"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="203dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/savedbtn" />
-
-    <include
-        android:id="@+id/bottomNav"
-        layout="@layout/activity_bottom_navigation" />
+        app:layout_constraintTop_toTopOf="@+id/view6"
+        app:srcCompat="@drawable/unnamed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

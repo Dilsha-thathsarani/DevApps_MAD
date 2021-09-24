@@ -30,6 +30,7 @@ public class activity_h2p extends AppCompatActivity {
 
     private Button button;
     private Button button2;
+    private Button button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class activity_h2p extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.savedbtn);
         button2 = (Button) findViewById(R.id.newbtn);
+        button3 = (Button) findViewById(R.id.btnManage);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,17 +63,35 @@ public class activity_h2p extends AppCompatActivity {
             }
         });
 
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openManage();
+            }
+        });
+
     }
 
     public void openSaved(){
         //Intent intent = new Intent(this, activity_usecrd.class);
-       // Intent intent = new Intent(this, activity_pmethods.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, Addedcards2.class);
+        startActivity(intent);
+    }
+
+    public void openManage(){
+        //Intent intent = new Intent(this, activity_usecrd.class);
+        Intent intent = new Intent(this, Addedcards.class);
+        startActivity(intent);
     }
 
     public void openNew(){
-        //Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, cardform.class);
+        startActivity(intent);
+    }
+
+    public  void showSuccess(){
+        Intent intent = new Intent(this, activity_payStatus2.class);
+        startActivity(intent);
     }
 
 

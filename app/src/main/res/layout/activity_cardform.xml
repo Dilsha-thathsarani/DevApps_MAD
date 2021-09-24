@@ -200,4 +200,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/activity_bottom_navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

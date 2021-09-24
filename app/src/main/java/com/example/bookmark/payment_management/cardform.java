@@ -32,7 +32,9 @@ public class cardform extends AppCompatActivity {
     Card card;
     CheckBox chk;
 
-    protected boolean valid = false;
+    public boolean valid;
+    protected  int n=0;
+    protected int exist = 0;
 
     private static final Pattern NAME_PATTERN =
             Pattern.compile(".*\\d.*");
@@ -102,15 +104,17 @@ public class cardform extends AppCompatActivity {
                     card.setCv(cv);
                     card.setExpdate(expdate);
 
+                    isValid();
 
-                    reff.child(number).setValue(card);
-                    Toast.makeText(cardform.this, "Data added!", Toast.LENGTH_LONG).show();
+                    }
+
+
                 }
 
-                verifyPin();
-            }
-            isValid();
-        });
+               // verifyPin();
+            });
+            // isValid();
+  //      });
 
 
         /*********************************************************/
@@ -163,7 +167,7 @@ public class cardform extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Toast.makeText(cardform.this, decrypted + " = " + encrypted, Toast.LENGTH_LONG).show();
+       // Toast.makeText(cardform.this, decrypted + " = " + encrypted, Toast.LENGTH_LONG).show();
 
 
 
@@ -193,7 +197,7 @@ public class cardform extends AppCompatActivity {
             txtExp.setError("Field can't be empty");
             return false;
         } else if (!EXP_PATTERN.matcher(ExpInput).matches() || len!=5) {
-            txtExp.setError("Invalid Date Number");
+            txtExp.setError("Invalid Date");
             return false;
         } else {
             txtExp.setError(null);
@@ -237,33 +241,57 @@ public class cardform extends AppCompatActivity {
         return tmp;
     }
 
-    private boolean isValid(){
+    private void isValid(){
 
-
+        Toast.makeText(cardform.this, "in Valid", Toast.LENGTH_LONG).show();
 
         String NumInput = txtCrdNo.getText().toString().trim();
         String CvvInput = txtCvv.getText().toString().trim();
         String ExpInput = txtExp.getText().toString().trim();
 
-        DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("CardData");
-        Query checkCard = dataRef.orderByChild("number").equalTo(NumInput);
+        DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("SavedCardData");
+        Query checkCard = dataRef.orderByChild("number").equalTo(enc(NumInput));
 
+        if(n==0){
+            valid = !valid;
+            n++;
+        }else{
+            //valid = false;
+        }
 
+        Toast.makeText(cardform.this, "N ="+String.valueOf(n), Toast.LENGTH_LONG).show();
 
         checkCard.addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
 
+               // Toast.makeText(cardform.this, NumInput, Toast.LENGTH_LONG).show();
+
                 if (snapshot.exists()){
+
+                    //Toast.makeText(cardform.this, "In snap", Toast.LENGTH_LONG).show();
 
                     String cvvDB = snapshot.child(NumInput).child("cv").getValue(String.class);
                     String expDB = snapshot.child(NumInput).child("expdate").getValue(String.class);
 
+                    Toast.makeText(cardform.this, "inner Class", Toast.LENGTH_LONG).show();
+
                     if(cvvDB.equals(CvvInput) && expDB.equals(ExpInput) ){
-                        valid = true;
+                        setValid(true);
+                        reff.child(NumInput).setValue(card);
+                        verifyPin();
+                        exist=1;
                         Toast.makeText(cardform.this, "Data Matched", Toast.LENGTH_LONG).show();
                     }
-
+                    else{
+                        exist=2;
+                        Intent intent = new Intent(cardform.this, activity_payStatus.class);
+                          startActivity(intent);
+                    }
+                }else{
+                    Intent intent = new Intent(cardform.this, activity_payStatus.class);
+                    startActivity(intent);
                 }
             }
 
@@ -273,7 +301,33 @@ public class cardform extends AppCompatActivity {
             }
         });
 
-        return valid;
+
+    }
+
+    public String enc(String NumInput){
+        String encrypted = "";
+        String sourceStr = NumInput;
+        try {
+            encrypted = AESUtils.encrypt(sourceStr);
+            System.out.println("TEST" + "encrypted:" + encrypted);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return encrypted;
+
+    }
+
+    public void setValid(boolean res){
+        valid = res;
+    }
+
+    public boolean getValid(){
+
+        if(n==1){
+            return valid;
+        }else{
+            return !valid;
+        }
     }
 
 }
