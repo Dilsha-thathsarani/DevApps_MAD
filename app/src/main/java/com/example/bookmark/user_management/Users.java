@@ -23,7 +23,7 @@ public class Users {
         this.Uid=uid;
         this.Email = email;
         this.Name = name;
-       // this.Password = password;
+        // this.Password = password;
         this.UserType=userType;
 
     }
@@ -52,14 +52,6 @@ public class Users {
     public void setName(String Name) {
         this.Name = Name;
     }
-
-  //  public String getPassword() {
-     //   return Password;
-   // }
-
-    //public void setPassword(String Password) {
-       // this.Password = Password;
- //   }
 
 
 }

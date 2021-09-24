@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user.xml" value="0.1" />
-        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_login.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_profile.xml" value="0.20364583333333333" />
-        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_register.xml" value="0.18958333333333333" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/drawable/ic_noun_bin_3661721.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/drawable/selector.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1921875" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_my_review.xml" value="0.1921875" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_review_books.xml" value="0.25" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_show_review.xml" value="0.25" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_login.xml" value="0.25" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_register.xml" value="0.1" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/row_my_review.xml" value="0.1921875" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/row_review.xml" value="0.25" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/menu/menu_navigation.xml" value="0.1921875" />
       </map>
     </option>
   </component>

@@ -1,8 +1,5 @@
 package com.example.bookmark.user_management;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +10,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bookmark.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,16 +46,16 @@ public class UserRegister extends AppCompatActivity {
         setContentView(R.layout.activity_user_register);
 
 
-         Button registerbtn = findViewById(R.id.registerbtn);
-         progressDialog= new ProgressDialog(this);
-         mAuth = FirebaseAuth.getInstance();
-         mUser=mAuth.getCurrentUser();
+        Button registerbtn = findViewById(R.id.registerbtn);
+        progressDialog= new ProgressDialog(this);
+        mAuth = FirebaseAuth.getInstance();
+        mUser=mAuth.getCurrentUser();
 
-         email = findViewById(R.id.email);
-         enterName = findViewById(R.id.enterName);
-         enterPwd1 = findViewById(R.id.enterPwd1);
-         enterPwd2 = findViewById(R.id.enterPwd2);
-         checkBox=findViewById(R.id.checkBox);
+        email = findViewById(R.id.email);
+        enterName = findViewById(R.id.enterName);
+        enterPwd1 = findViewById(R.id.enterPwd1);
+        enterPwd2 = findViewById(R.id.enterPwd2);
+        checkBox=findViewById(R.id.checkBox);
 
 
         registerbtn.setOnClickListener(new View.OnClickListener() {
@@ -68,66 +68,66 @@ public class UserRegister extends AppCompatActivity {
 
 
     }
-        private void PerformAuth() {
-            String authemail = email.getText().toString();
-            String authName = enterName.getText().toString();
-            String authenterPwd1 = enterPwd1.getText().toString();
-            String authenterPwd2 = enterPwd2.getText().toString();
+    private void PerformAuth() {
+        String authemail = email.getText().toString();
+        String authName = enterName.getText().toString();
+        String authenterPwd1 = enterPwd1.getText().toString();
+        String authenterPwd2 = enterPwd2.getText().toString();
 
-            if (!authemail.matches(emailPattern)) {
+        if (!authemail.matches(emailPattern)) {
 
-                email.setError("Enter Correct Email");
+            email.setError("Enter Correct Email");
 
-            } else if (authemail.isEmpty()|| authName.isEmpty()||authenterPwd1.isEmpty()||authenterPwd2.isEmpty()) {
+        } else if (authemail.isEmpty()|| authName.isEmpty()||authenterPwd1.isEmpty()||authenterPwd2.isEmpty()) {
 
-                Toast.makeText(UserRegister.this,"Please Fill All Fields",Toast.LENGTH_LONG).show();
+            Toast.makeText(UserRegister.this,"Please Fill All Fields",Toast.LENGTH_LONG).show();
 
-            } else if (!authenterPwd1.equals(authenterPwd2)) {
+        } else if (!authenterPwd1.equals(authenterPwd2)) {
 
-                enterPwd2.setError("Password Not Matched");
+            enterPwd2.setError("Password Not Matched");
 
-            } else if (!checkBox.isChecked()) {
+        } else if (!checkBox.isChecked()) {
 
-                checkBox.setError("You must agree to the Terms & Conditions");
+            checkBox.setError("You must agree to the Terms & Conditions");
 
-            }
-
-
-            else{
-
-                progressDialog.setMessage("Please Wait While Registering!");
-                progressDialog.setTitle("Register");
-                progressDialog.setCanceledOnTouchOutside(false);
-                progressDialog.show();
-
-                mAuth.createUserWithEmailAndPassword(authemail,authenterPwd1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
-                        {
-
-                            String uid= Objects.requireNonNull(Objects.requireNonNull(task.getResult()).getUser()).getUid();
-                            Users user= new Users(uid,email.getText().toString(),enterName.getText().toString(),0);
-                            firebaseDatabase.getReference().child("Users").child(uid).setValue(user);
-                            progressDialog.dismiss();
-                            sendLogin();
-                            Toast.makeText(UserRegister.this,"Registered Successfully",Toast.LENGTH_LONG).show();
-                        }else{
-                            progressDialog.dismiss();
-                            Toast.makeText(UserRegister.this,""+task.getException(),Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-            }
         }
 
 
-       private void sendLogin(){
+        else{
+
+            progressDialog.setMessage("Please Wait While Registering!");
+            progressDialog.setTitle("Register");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            mAuth.createUserWithEmailAndPassword(authemail,authenterPwd1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful())
+                    {
+
+                        String uid= Objects.requireNonNull(Objects.requireNonNull(task.getResult()).getUser()).getUid();
+                        Users user= new Users(uid,email.getText().toString(),enterName.getText().toString(),0);
+                        firebaseDatabase.getReference().child("Users").child(uid).setValue(user);
+                        progressDialog.dismiss();
+                        sendLogin();
+                        Toast.makeText(UserRegister.this,"Registered Successfully",Toast.LENGTH_LONG).show();
+                    }else{
+                        progressDialog.dismiss();
+                        Toast.makeText(UserRegister.this,""+task.getException(),Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
+    }
+
+
+    private void sendLogin(){
 
         Intent intent=new Intent(UserRegister.this,UserLogin.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);          //Prevent comeback to register
         startActivity(intent);
-       }
+    }
 
 
 

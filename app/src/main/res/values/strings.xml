@@ -30,4 +30,26 @@
     <string name="forgot_password">Forgot Password?</string>
 
 
+    //Review
+    <string name="rate_this">Rate this book </string>
+    <string name="rating">3.9/5</string>
+    <string name="book_name">Harry Potter</string>
+    <string name="customer_review">Customer Reviews</string>
+    <string name="total_count">87 Total Reviews</string>
+    <string name="bookImg">bookImg</string>
+    <string name="filter_condition">All Stars</string>
+    <string name="your_review">Your Review</string>
+    <string name="comment">Great book</string>
+    <string name="editbtn">Edit</string>
+    <string name="removebtn">Remove</string>
+    <string name="savebtn">Save</string>
+
+    //Profile
+    <string name="profile">Profile</string>
+    <string name="mail">jeram@gmail.com</string>
+    <string name="name">Jeram</string>
+    <string name="save">Save</string>
+    <string name="payment">Add/Edit Payment Methods</string>
+    <string name="reviews">Check My Reviews</string>
+    <string name="nametxt">Name</string>
 </resources>
