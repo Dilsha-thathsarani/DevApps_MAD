@@ -86,9 +86,19 @@ public class cardform extends AppCompatActivity {
                     //card.setCrdNo(num);
                     //card.setExp(exp);
                     //card.setCvv(Cv);
+
+                    String encryptedNumber = "";
+                    String sourceStr = number;
+                    try {
+                        encryptedNumber = AESUtils.encrypt(sourceStr);
+                        System.out.println("TEST" + "encrypted:" + encryptedNumber);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                     card.setUid(txtUid);
                     card.setCardname(cardname);
-                    card.setNumber(number);
+                    card.setNumber(encryptedNumber);
                     card.setCv(cv);
                     card.setExpdate(expdate);
 
@@ -131,6 +141,33 @@ public class cardform extends AppCompatActivity {
 
     public boolean validateNumber(){
         String NumInput = txtCrdNo.getText().toString().trim();
+
+        /********************************************************/
+
+        String encrypted = "";
+        String sourceStr = NumInput;
+        try {
+            encrypted = AESUtils.encrypt(sourceStr);
+            System.out.println("TEST" + "encrypted:" + encrypted);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        //encrypted = "ANY_ENCRYPTED_STRING_HERE";
+        String decrypted = "";
+        try {
+            decrypted = AESUtils.decrypt(encrypted);
+            System.out.println("TEST"+ "decrypted:" + decrypted);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Toast.makeText(cardform.this, decrypted + " = " + encrypted, Toast.LENGTH_LONG).show();
+
+
+
+        /********************************************************/
 
 
         if (NumInput.isEmpty()) {

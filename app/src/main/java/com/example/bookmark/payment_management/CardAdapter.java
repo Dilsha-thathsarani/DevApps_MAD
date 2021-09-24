@@ -61,7 +61,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
         Cards cards = list.get(position);
         holder.cardname.setText(cards.getCardname());
-        holder.cardnumber.setText(cards.getNumber());
+        holder.cardnumber.setText(cards.getDecNumber());
         holder.expdate.setText(cards.getExpdate());
         holder.cvv.setText(cards.getCv());
 
@@ -88,7 +88,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                 Button btnUpdate = view.findViewById(R.id.editcrd);
 
                 name.setText(cards.getCardname());
-                number.setText(cards.getNumber());
+                number.setText(cards.getDecNumber());
                 expdate.setText(cards.getExpdate());
                 cv.setText(cards.getCv());
 
@@ -97,9 +97,20 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        String tmp = number.getText().toString();
+
+                        String encryptedNumber = "";
+                        String sourceStr = tmp;
+                        try {
+                            encryptedNumber = AESUtils.encrypt(sourceStr);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
                         Map<String,Object> map = new HashMap<>();
                         map.put("cardname",name.getText().toString());
-                        map.put("number",number.getText().toString());
+                        map.put("number",encryptedNumber);
                         map.put("expdate",expdate.getText().toString());
                         map.put("cv",cv.getText().toString());
                         map.put("uid",uid);
@@ -144,9 +155,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
                 builder.setPositiveButton("Delete",new DialogInterface.OnClickListener(){
 
-                    String key = String.valueOf(cards.getNumber());
+                    String key = String.valueOf(cards.getDecNumber());
                     @Override
                     public void onClick(DialogInterface dialog, int which){
+                        //Toast.makeText(holder.cardname.getContext(), "Card Removed", Toast.LENGTH_SHORT).show();
                         FirebaseDatabase.getInstance().getReference().child("CardData")
                                 .child(key).removeValue();
                         Toast.makeText(holder.cardname.getContext(), "Card Removed", Toast.LENGTH_SHORT).show();
