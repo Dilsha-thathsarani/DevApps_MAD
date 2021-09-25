@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:numStars="5"
+            android:progressTint="@android:color/holo_orange_light"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_below="@+id/profileList"/>
