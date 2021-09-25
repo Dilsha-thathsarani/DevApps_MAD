@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
         <activity
+            android:name=".user_management.UserLogin"
+            android:exported="true" />
+        <activity
             android:name=".product_review.MyReview"
             android:exported="true" />
         <activity
@@ -23,9 +26,6 @@
             android:exported="true" />
         <activity
             android:name=".user_management.UserRegister"
-            android:exported="true" />
-        <activity
-            android:name=".user_management.UserLogin"
             android:exported="true" />
         <activity android:name=".product_review.ReviewActivity" />
         <activity android:name=".cart_management.CartActivity" />

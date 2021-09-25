@@ -129,7 +129,7 @@ public class ReviewBooks extends AppCompatActivity {
             public void onClick(View v) {
                 //Pass bookName and redirect new activity
 
-                Intent intent=new Intent(ReviewBooks.this,ReviewBooks.class);
+                Intent intent=new Intent(ReviewBooks.this,ShowReview.class);
                 intent.putExtra("book1",book1);
                 startActivity(intent);
 
