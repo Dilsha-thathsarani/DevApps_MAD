@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark"
         tools:replace="android:theme">
-        <activity android:name=".cart_management.CartActivity"></activity>
+        <activity android:name=".cart_management.ConfirmFinalOrderActivity"></activity>
+        <activity android:name=".cart_management.CartActivity" />
         <activity android:name=".listing_management.ProductDetailsActivity" />
         <activity android:name=".product_review.ReviewActivity" />
         <activity android:name=".user_management.UserActivity" />

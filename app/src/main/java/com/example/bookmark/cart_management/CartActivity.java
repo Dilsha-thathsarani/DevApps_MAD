@@ -40,6 +40,8 @@ public class CartActivity extends AppCompatActivity {
     private TextView textTotalAmount;
     private static final String TAG = "TAG";
 
+    private  int overTotalPrice =0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,17 @@ public class CartActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         Nextprocessbtn = (Button) findViewById(R.id.btnCheckout);
+
+        Nextprocessbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textTotalAmount.setText("Total Price ="+ String.valueOf(overTotalPrice));
+                Intent intent = new Intent(CartActivity.this,ConfirmFinalOrderActivity.class);
+                intent.putExtra("Total Price", String.valueOf(overTotalPrice));
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
@@ -75,6 +88,10 @@ public class CartActivity extends AppCompatActivity {
                 holder.txtProductQuantity.setText("Quantity: "+model.getQuantity());
                 holder.txtProductPrice.setText("Price: "+model.getPrice());
                 holder.txtProductName.setText(model.getPname());
+/*****************************************************************************************************************************************/
+                int oneTypeProductPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
+                overTotalPrice = overTotalPrice + oneTypeProductPrice;
+/*****************************************************************************************************************************************/
 
                 Log.d(TAG, "onBindViewHolder: " + holder.txtProductName + "" + holder.txtProductPrice + "" + holder.txtProductPrice + "");
 
