@@ -1,5 +1,7 @@
 package com.example.bookmark.product_review;
 
+import java.util.Comparator;
+
 public class ModelReview {
 
     String bookName,uid,comment,timestamp;
@@ -15,6 +17,21 @@ public class ModelReview {
         this.comment = comment;
         this.timestamp=timestamp;
     }
+
+    public static Comparator<ModelReview> newest=new Comparator<ModelReview>() {
+        @Override
+        public int compare(ModelReview o1, ModelReview o2) {
+            return o1.getTimestamp().compareTo(o2.getTimestamp());
+        }
+    };
+
+    public static Comparator<ModelReview> oldest=new Comparator<ModelReview>() {
+        @Override
+        public int compare(ModelReview o1, ModelReview o2) {
+            return o2.getTimestamp().compareTo(o1.getTimestamp());
+        }
+    };
+
 
     public String getBookName() {
         return bookName;
