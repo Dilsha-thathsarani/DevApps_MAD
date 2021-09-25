@@ -34,7 +34,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="30dp"
-            android:text="@string/tit_paystatus"
+            android:text="Payment Status"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"

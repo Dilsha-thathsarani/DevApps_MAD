@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="#3C498A"
+    app:cardBackgroundColor="@color/dark"
     app:cardCornerRadius="10dp"
     app:cardElevation="8dp">>
 
@@ -24,19 +24,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Card Name :"
+                android:text=""
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtcardname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="8dp"
                 android:text="Arya"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textColor="@color/teal_200"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -49,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Card Number :"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -58,10 +60,11 @@
                 android:id="@+id/txtcardnumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Stark"
+                android:layout_marginLeft="0dp"
+                android:text="42164456785467"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -127,17 +130,17 @@
                 android:layout_width="173dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
+                android:text="Edit"
                 android:textColor="#000000"
-                app:backgroundTint="#FFFFFF"
-                android:text="Edit" />
+                app:backgroundTint="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnDelete"
                 android:layout_width="173dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                app:backgroundTint="#FF0000"
-                android:text="Delete" />
+                android:text="Delete"
+                app:backgroundTint="#FF0000" />
         </LinearLayout>
 
 

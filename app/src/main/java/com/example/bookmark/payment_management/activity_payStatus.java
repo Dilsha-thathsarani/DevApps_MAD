@@ -35,7 +35,7 @@ public class activity_payStatus extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_payStatus.this, Addedcards.class);
+                Intent intent = new Intent(activity_payStatus.this, Addedcards2.class);
                 startActivity(intent);
             }
         });

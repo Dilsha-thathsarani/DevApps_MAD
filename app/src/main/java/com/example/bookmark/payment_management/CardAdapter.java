@@ -34,9 +34,7 @@ import java.util.MissingResourceException;
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
 
     Context context;
-
     ArrayList<Cards> list;
-
     String uid = "user001";
 
     static boolean flag = false;
@@ -67,7 +65,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
 
 
-        /**********************<< UPDATE >></>*****************************/
+        /******************** << UPDATE >>  *****************************/
 
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +74,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                         .setContentHolder(new ViewHolder(R.layout.update_popup))
                         .setExpanded(true, 1400)
                         .create();
-                //dialogPlus.show();
 
                 View view = dialogPlus.getHolderView();
 
@@ -117,7 +114,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
                         flag = true;
 
-                        //String key = String.valueOf(number);
                         String key = number.getText().toString();
                         FirebaseDatabase.getInstance().getReference().child("CardData")
                                 .child(key).updateChildren(map)
@@ -158,7 +154,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                     String key = String.valueOf(cards.getDecNumber());
                     @Override
                     public void onClick(DialogInterface dialog, int which){
-                        //Toast.makeText(holder.cardname.getContext(), "Card Removed", Toast.LENGTH_SHORT).show();
                         FirebaseDatabase.getInstance().getReference().child("CardData")
                                 .child(key).removeValue();
                         Toast.makeText(holder.cardname.getContext(), "Card Removed", Toast.LENGTH_SHORT).show();

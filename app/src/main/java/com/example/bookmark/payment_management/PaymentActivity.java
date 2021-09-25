@@ -61,7 +61,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         //Get Data
 
-        Button button2 = findViewById(R.id.button2);
+        Button button2 = findViewById(R.id.btnCancel);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

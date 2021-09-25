@@ -32,11 +32,8 @@ import java.util.Map;
 import java.util.MissingResourceException;
 
 public class CardAdapter2 extends RecyclerView.Adapter<CardAdapter2.CardViewHolder> {
-
     Context context;
-
     ArrayList<Cards> list;
-
     String uid = "user001";
 
     static boolean flag = false;
