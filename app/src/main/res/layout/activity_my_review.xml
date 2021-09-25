@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:layout_marginBottom="20dp"
+    android:layout_marginBottom="15dp"
     tools:context=".product_review.MyReview">
 
     <RelativeLayout
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:background="#23307A"
         android:padding="10dp"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="20dp">
 
         <ImageButton
 
@@ -35,7 +35,38 @@
             android:textColor="@color/white"
             android:textSize="24sp" />
 
+
+
+
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Sort"
+        android:layout_marginLeft="320dp"
+        android:layout_marginRight="10dp"
+        android:layout_toStartOf="@id/imageButton33"
+        android:layout_toLeftOf="@id/imageButton33"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton33"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="320dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="10dp"
+        android:minHeight="48dp"
+        app:srcCompat="@drawable/ic_baseline_sort_24"
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/allReview"
@@ -43,5 +74,6 @@
         android:layout_height="match_parent"
 
         />
+
 
 </LinearLayout>

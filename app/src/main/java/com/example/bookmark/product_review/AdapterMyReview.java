@@ -29,7 +29,7 @@ public class AdapterMyReview extends FirebaseRecyclerAdapter<ModelReview,Adapter
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull ModelReview model) {
         holder.myRating.setRating(model.getRate());
-        //holder.rDate.setText(model.getTimestamp());
+        holder.rDate.setText(model.getTimestamp());
         holder.rBooks.setText(model.getBookName());
 
     }

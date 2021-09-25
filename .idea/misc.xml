@@ -9,7 +9,7 @@
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/drawable/ic_noun_bin_3661721.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/drawable/selector.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1921875" />
-        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_my_review.xml" value="0.1921875" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_my_review.xml" value="0.22" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_review_books.xml" value="0.25" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_show_review.xml" value="0.25" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/activity_user_login.xml" value="0.25" />
@@ -18,6 +18,7 @@
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/row_my_review.xml" value="0.1921875" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/layout/row_review.xml" value="0.25" />
         <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/menu/menu_navigation.xml" value="0.1921875" />
+        <entry key="..\:/Users/D/AndroidStudioProjects/DevApps_MAD/app/src/main/res/menu/sort_menu.xml" value="0.1921875" />
       </map>
     </option>
   </component>

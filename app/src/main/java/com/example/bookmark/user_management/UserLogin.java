@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bookmark.R;
-import com.example.bookmark.product_review.ReviewBooks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -74,7 +73,7 @@ public class UserLogin extends AppCompatActivity {
                                 if(userType==0){
 
                                     progressDialog.dismiss();
-                                    Intent intent=new Intent(UserLogin.this, ReviewBooks.class);
+                                    Intent intent=new Intent(UserLogin.this, UserProfile.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
                                     Toast.makeText(UserLogin.this,"Successfully Logged In",Toast.LENGTH_LONG).show();
