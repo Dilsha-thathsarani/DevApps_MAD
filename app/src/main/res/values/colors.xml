@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="dark">#3C498A</color>
+    <color name="light">#E6F1F7</color>
+    <color name="btn_green">#4CAF50</color>
+    <color name="btn_red">#FB0000</color>
+
+
     <color name="overlayBackground">#CDC5C5</color>
     <color name="overlayActionBar">#0e0d0e</color>
+
 </resources>

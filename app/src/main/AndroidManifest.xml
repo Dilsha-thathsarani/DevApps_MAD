@@ -16,6 +16,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
+
+        <activity android:name=".payment_management.activity_payStatus2"></activity>
+        <activity android:name=".payment_management.Addedcards2" />
+        <activity android:name=".payment_management.activity_payStatus" />
+        <activity android:name=".payment_management.bottomNavigation" />
+        <activity android:name=".payment_management.Addedcards" />
+        <activity android:name=".payment_management.SavedMethods" />
+        <activity android:name=".product_review.ReviewActivity" />
+        <activity android:name=".cart_management.CartActivity" />
+        <activity android:name=".user_management.UserActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".order_management.OrderActivity" />
+        <activity android:name=".listing_management.ListingActivity" />
+        <activity android:name=".category_management.CategoryActivity" />
+        <!--
+        <activity android:name=".user_management.User" />
+        <activity android:name=".product_review.Review" />
+        <activity android:name=".payment_management.Payment" />
+        <activity android:name=".cart_management.Cart" />
+        <activity android:name=".order_management.Order" />
+        <activity android:name=".listing_management.Listing" />
+        <activity android:name=".category_management.Category" />
+        -->
+        <activity android:name=".payment_management.PaymentActivity" />
+        <activity android:name=".payment_management.cardform" />
+        <activity android:name=".payment_management.activity_h2p">
+
         <activity android:name=".category_management.ItemDetails"></activity>
         <activity android:name=".category_management.AddProduct">
 
@@ -37,6 +64,7 @@
 
         </activity>
         <activity android:name=".category_management.EditBook">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
