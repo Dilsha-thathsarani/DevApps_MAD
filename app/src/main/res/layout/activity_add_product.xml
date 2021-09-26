@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:padding="10dp"
-        android:background="@color/purple_700">
+        android:background="@color/dark_blue">
         <ImageButton
             android:id="@+id/back"
             android:layout_width="30dp"
@@ -161,7 +161,8 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:minWidth="10dp"
-        android:text="Add Book" />
+        android:text="Add Book"
+        app:backgroundTint="@color/dark_blue" />
 
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,7 +15,8 @@
         android:layout_height="400dp"
         android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/white">
 
         <androidx.cardview.widget.CardView
             android:layout_width="350dp"
@@ -22,7 +24,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="30dp"
             android:layout_weight="1"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="@color/light_blue"
             app:cardCornerRadius="25dp"
             app:cardElevation="25dp">
 
@@ -34,11 +36,12 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/img3"
-                    android:layout_width="300dp"
-                    android:layout_height="240dp"
-
-                    android:layout_marginRight="92dp"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="9dp"
                     android:layout_marginBottom="5dp"
+                    android:paddingTop="10dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_baseline_add_photo_alternate_24" />
 
@@ -55,16 +58,16 @@
 
 
 
-                <TextView
-                    android:id="@+id/price3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="PRICE"
-                    android:textColor="@color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/price3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="25dp"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:text="PRICE"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:textStyle="bold" />-->
 
                 <TextView
                     android:id="@+id/discountPrice3"
@@ -86,6 +89,32 @@
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/add_product_to_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/desc3"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/dark_blue"
+                    android:layout_gravity="center"
+                    android:text="-   1   +">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/add_product_to_cart_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/desc3"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/black"
+                    android:layout_gravity="center"
+                    android:text="add to cart">
+
+                </Button>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
