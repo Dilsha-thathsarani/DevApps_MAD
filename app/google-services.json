@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "239799763672",
+
     "firebase_url": "https://bookmark-d9cdc-default-rtdb.firebaseio.com",
+
     "project_id": "bookmark-d9cdc",
     "storage_bucket": "bookmark-d9cdc.appspot.com"
   },
@@ -34,6 +36,7 @@
           ]
         }
       }
+
     },
     {
       "client_info": {
@@ -63,6 +66,7 @@
           ]
         }
       }
+
     }
   ],
   "configuration_version": "1"

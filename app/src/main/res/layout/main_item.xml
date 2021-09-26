@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="12dp"
+    android:elevation="12dp"
+    android:padding="-5dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginTop="30dp"
+    android:background="@color/light_blue"
+    tools:context=".category_management.DisplayBooks"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="15dp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img2"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="0dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            app:strokeColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameText"
+            android:text="Book Name"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/img2"
+
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/price"
+            android:text="Price"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/img2"
+            android:layout_below="@+id/nameText"
+
+            />
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tt"-->
+<!--            android:layout_width="139dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/price"-->
+<!--            android:layout_alignParentRight="true"-->
+
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:layout_marginRight="43dp"-->
+<!--            android:layout_toRightOf="@id/img2"-->
+<!--            android:scrollHorizontally="false"-->
+<!--            android:text="Now"-->
+<!--            android:textStyle="italic"-->
+<!--            android:textColor="#FF0C0C"-->
+<!--            android:textSize="16sp" />-->
+
+        <TextView
+            android:id="@+id/tt1"
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="43dp"
+            android:layout_toRightOf="@id/img2"
+            android:scrollHorizontally="false"
+            android:textStyle="italic"
+            android:textColor="#FF0C0C"
+            android:text="price"
+            android:textSize="18sp" />
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
