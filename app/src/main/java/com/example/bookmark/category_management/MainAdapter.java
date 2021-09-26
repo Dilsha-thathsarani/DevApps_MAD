@@ -30,8 +30,9 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
     @Override
     protected void onBindViewHolder(myViewHolder holder, int position,  MainModel model) {
         holder.title.setText(model.getTitle());
-        holder.price.setText(model.getPrice());
+       // holder.price.setText(model.getPrice());
         holder.discountPrice.setText(model.getDiscountPrice());
+
 
        Glide.with(holder.image.getContext())
                .load(model.getImage())
@@ -67,8 +68,8 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
 
             image = (ShapeableImageView)itemView.findViewById(R.id.img2);
             title = (TextView)itemView.findViewById(R.id.nameText);
-            price = (TextView)itemView.findViewById(R.id.price);
-            discountPrice = (TextView)itemView.findViewById(R.id.discountPrice);
+            //price = (TextView)itemView.findViewById(R.id.tt);
+            discountPrice = (TextView)itemView.findViewById(R.id.tt1);
 
         }
     }
