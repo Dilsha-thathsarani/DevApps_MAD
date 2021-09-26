@@ -17,6 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
 
+        <activity android:name=".cart_management.ConfirmFinalOrderActivity"></activity>
+        <activity android:name=".category_management.ItemDetails" />
+        <activity android:name=".category_management.AddProduct">
+
+
         <activity
             android:name=".user_management.UserLogin"
             android:exported="true" />
@@ -67,9 +72,13 @@
         <activity android:name=".category_management.ItemDetails"></activity>
         <activity android:name=".category_management.AddProduct">
 
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
 
 <!--             <category android:name="android.intent.category.LAUNCHER" />-->
 <!--             </intent-filter>-->
@@ -83,6 +92,7 @@
              <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
 
+
         </activity>
         <activity android:name=".category_management.EditBook">
 
@@ -90,8 +100,13 @@
                 <action android:name="android.intent.action.MAIN" />
 
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
+
 
         </activity>
         <activity android:name=".product_review.ReviewActivity" />
@@ -100,6 +115,8 @@
         <activity android:name=".payment_management.PaymentActivity" />
         <activity android:name=".order_management.OrderActivity" />
         <activity android:name=".listing_management.ListingActivity" />
+
+        <activity android:name=".MainActivity" />
         <activity android:name=".category_management.DisplayCategory">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->

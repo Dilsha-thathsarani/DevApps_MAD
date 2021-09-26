@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">bookMark</string>
 
+    <string name="btnCheckout">Checkout</string>
+    <string name="txtTotal">Total</string>
+
+
 
     //UserRegister
     <string name="register">Register</string>
@@ -78,5 +82,6 @@
     <string name="lbl_resend">Resend</string>
     <string name="lbl_pays">Payment Failed!</string>
     <string name="btn_saved">Manage My cards</string>
+
 
 </resources>
