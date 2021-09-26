@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".payment_management.bottomNavigation">
+
+    tools:context=".bottomNavigation">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -12,8 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+
+        android:background="#5E3E91"
+        app:itemBackground="@color/navbarDark"
+
         android:background="@color/dark"
         app:itemBackground="@color/dark"
+
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />

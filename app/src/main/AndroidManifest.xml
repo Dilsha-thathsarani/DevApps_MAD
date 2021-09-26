@@ -17,12 +17,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark">
 
+        <activity
+            android:name=".user_management.UserLogin"
+            android:exported="true" />
+        <activity
+            android:name=".product_review.MyReview"
+            android:exported="true" />
+        <activity
+            android:name=".product_review.ShowReview"
+            android:exported="true" />
+        <activity
+            android:name=".user_management.UserProfile"
+            android:exported="true" />
+        <activity
+            android:name=".product_review.ReviewBooks"
+            android:exported="true" />
+        <activity
+            android:name=".user_management.UserRegister"
+            android:exported="true" />
+
+
         <activity android:name=".payment_management.activity_payStatus2"></activity>
         <activity android:name=".payment_management.Addedcards2" />
         <activity android:name=".payment_management.activity_payStatus" />
         <activity android:name=".payment_management.bottomNavigation" />
         <activity android:name=".payment_management.Addedcards" />
         <activity android:name=".payment_management.SavedMethods" />
+
         <activity android:name=".product_review.ReviewActivity" />
         <activity android:name=".cart_management.CartActivity" />
         <activity android:name=".user_management.UserActivity" />
