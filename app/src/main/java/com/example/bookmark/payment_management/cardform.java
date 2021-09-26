@@ -69,14 +69,11 @@ public class cardform extends AppCompatActivity {
         btnCancel = (Button)findViewById(R.id.btnCancel);
         chk = (CheckBox)findViewById(R.id.chkSave);
         txtUid = "user001";
-
         card = new Card();
         reff = FirebaseDatabase.getInstance().getReference().child("CardData");
 
         btnsave.setOnClickListener(v -> {
             if(validateInputs()) {            //Form Validation
-                if (chk.isChecked()) {        //User wants to save
-
                     String cardname = String.valueOf(txtCusName.getText());
                     String number = (txtCrdNo.getText().toString().trim());
                     String expdate = String.valueOf(txtExp.getText());
@@ -89,12 +86,8 @@ public class cardform extends AppCompatActivity {
                     card.setNumber(encryptedNumber);
                     card.setCv(cv);
                     card.setExpdate(expdate);
-
-                    isValid();  //validate card data with database
-
                     }
-                }
-
+                isValid();  //validate card data with database
             });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -200,15 +193,12 @@ public class cardform extends AppCompatActivity {
     }
 
     private void isValid(){
-
-
         String NumInput = txtCrdNo.getText().toString().trim();
         String CvvInput = txtCvv.getText().toString().trim();
         String ExpInput = txtExp.getText().toString().trim();
 
         DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("SavedCardData");
         Query checkCard = dataRef.orderByChild("number").equalTo(enc(NumInput));
-
 
         checkCard.addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -221,11 +211,11 @@ public class cardform extends AppCompatActivity {
                     String expDB = snapshot.child(NumInput).child("expdate").getValue(String.class);
 
                     if(cvvDB.equals(CvvInput) && expDB.equals(ExpInput) ){
-
-                        reff.child(NumInput).setValue(card);
+                        if (chk.isChecked()) {
+                            reff.child(NumInput).setValue(card); //Insert data to db
+                            Toast.makeText(cardform.this, "Card Saved", Toast.LENGTH_LONG).show();
+                        }
                         showSuccess();
-
-                        Toast.makeText(cardform.this, "Data Matched", Toast.LENGTH_LONG).show();
                     }
                     else{
                         Intent intent = new Intent(cardform.this, activity_payStatus.class);
@@ -251,7 +241,6 @@ public class cardform extends AppCompatActivity {
         String sourceStr = NumInput;
         try {
             encrypted = AESUtils.encrypt(sourceStr);
-            System.out.println("TEST" + "encrypted:" + encrypted);
         } catch (Exception e) {
             e.printStackTrace();
         }

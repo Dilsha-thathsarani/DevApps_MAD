@@ -123,7 +123,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                                         Toast.makeText(holder.cardname.getContext(), "Updated Successfully", Toast.LENGTH_SHORT).show();
                                         dialogPlus.dismiss();
                                         flag = true;
-
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -169,8 +168,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                 });
 
                 builder.show();
-
-
             }
         });
     }

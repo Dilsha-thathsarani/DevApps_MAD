@@ -42,9 +42,6 @@ public class activity_h2p extends AppCompatActivity {
 
         setContentView(R.layout.activity_h2p);
 
-
-
-
         button = (Button) findViewById(R.id.savedbtn);
         button2 = (Button) findViewById(R.id.newbtn);
         button3 = (Button) findViewById(R.id.btnManage);
@@ -73,13 +70,11 @@ public class activity_h2p extends AppCompatActivity {
     }
 
     public void openSaved(){
-        //Intent intent = new Intent(this, activity_usecrd.class);
         Intent intent = new Intent(this, Addedcards2.class);
         startActivity(intent);
     }
 
     public void openManage(){
-        //Intent intent = new Intent(this, activity_usecrd.class);
         Intent intent = new Intent(this, Addedcards.class);
         startActivity(intent);
     }
